@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Company</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+    rel="icon"
+    href=
+"round busniess card-01.png"
+    type="image/x-icon"
+/>
+    <style>
+        @font-face {
+            font-family:'Darker-Grotesque-Regular';
+            src: url('DarkerGrotesque-Regular.ttf');
+        }
+        @font-face{
+            font-family: 'Darker-Grotesque-Medium';
+            src: url('DarkerGrotesque-Medium.ttf');
+        }
+        @font-face{
+            font-family: 'Aspekta';
+            src: url('Aspekta-250.ttf');
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color:rgb(85,97,97);
+        }
+        body{
+            width:100vw;
+        }
+        .title-container-left {
+            display: flex;
+            gap: 25px;
+            margin:25px;     
+            margin-top:-30px;     
+            margin-left: 60px;   
+            font-size: 18px;
+            font-family: 'Aspekta';
+        }
+        .title-container-right {
+            display: flex;
+            gap: 25px;
+            margin:20px;   
+            margin-top: -50px;  
+            margin-right: 60px;   
+            justify-content: right;
+            font-size: 18px;
+            font-family: 'Aspekta';
+        }
+        .title-container-middle {
+            display: flex;
+            gap: 25px;
+            margin:20px;   
+            margin-top: -47px;  
+            justify-content: center;
+            font-family: 'Darker-Grotesque-Medium';
+            font-size: 22px;
+
+        }
+        .info-container-circle{
+            display: flex;
+            margin: 120px;
+            gap: 10px;
+            z-index: 1;
+            position:relative;
+        }
+        .info-container{
+            display: flex;
+            margin: 60px;
+            gap: 10px;
+            z-index: 9999999;
+        }
+        .large-text {
+            font-family: 'Darker-Grotesque-Medium';
+     font-size:5.2vw;
+     line-height:105px;
+     
+        }
+        .medium-text {
+            font-family: 'Darker-Grotesque-Medium';
+     font-size:70px;
+     line-height:70px;
+        }
+        .small-text {
+            font-family: 'Aspekta';
+     font-size:23px;
+     line-height:35px;
+     width:47vw;
+     letter-spacing:0.5px;
+        }
+        .cursor {
+            position: fixed;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: rgb(85,96,96);
+            z-index: 99999999;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+        }
+        .fading-element {
+            opacity: 1;
+            transition: opacity -5s linear;
+            position: fixed;
+        }
+        #stickytypeheader {
+            width: 100%;
+            height: 70px;
+            background-image: linear-gradient(white, white, white, rgb(0, 0, 0, 0));   
+            z-index:999999999;
+        }
+    #sticky {
+      display: none;
+      height: 100px;
+    }
+    html {
+        scroll-behavior: smooth;
+      }
+
+      #v0{
+        position:fixed;
+
+      }
+      .disable-sticky {
+        position: relative;
+      }
+  
+    </style>
+</head>
+<body style="width:100vw;margin:0px;position:absolute;">
+
+<div style="height:30px;width:100vw;background-color:white;position:fixed;z-index:9999999;">
+
+</div>
+    <div class="info-container-circle" id="video-container" style="justify-content: center;">
+        <video id="v0" tabindex="0" width=580px, autobuffer preload>
+        <source src="air-video-new.mp4"type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="info-container" style="height:480vw;">
+
+    </div>
+
+    <div id="stickytypeheader" >
+        <div class="title-container-left">
+            <p onmouseenter="changeCursorColor()" onmouseleave="revertCursorColor()" style="margin-top:30px;">Technology</p>
+            <p onmouseenter="changeCursorColor()" onmouseleave="revertCursorColor()" style="margin-top:30px;">Products</p>
+            <p onmouseenter="changeCursorColor()" onmouseleave="revertCursorColor()" style="text-decoration: 1px underline;margin-top:30px;">Mission</p>
+      
+        </div>
+        <div class="title-container-right">
+            <p onmouseenter="changeCursorColor()" onmouseleave="revertCursorColor()" style="margin-top:-2px;">Cart</p>
+        </div>
+        <div class="title-container-middle">
+            <a href="#top">
+    <img src="air-logo-icon2.jpg" style="height:27px;margin-top:4px;" onmouseenter="changeCursorColor()" onmouseleave="revertCursorColor()">  
+    </a>  
+    </div>
+    </div>
+    
+    <div id="sticky"></div>
+    
+    <div class="info-container" style="height:700px;">
+
+    </div>
+
+    <div class="info-container" style="margin-top:40px;">
+        <p class="large-text" style="z-index: 9999;">
+            We exist to ensure </p>
+    </div>
+    
+    <div class="info-container"  style="height:32vw;">
+    </div>
+    
+    <div class="info-container" style="justify-content: right;margin-top:-70px;margin-left:11.3vw;">
+        <p class="large-text" style="z-index: 9999;">
+            humanity's existence.</p>
+    </div>
+    
+    <div class="info-container"  style="height:52vw;width:90vw;">
+
+    </div>
+
+    <div class="info-container" style="margin-top:155px;">
+        <p class="medium-text" style="margin-left:118px;">
+            Transforming CO2  
+     <br>into an endless resource. </p>
+    </div>
+    <div class="info-container" >
+        <p class="small-text" style="margin-left:120px;margin-top:-15px;">
+            At AIR COMPANY, we’re transforming our most problematic 
+            greenhouse gas into an endless resource, converting carbon 
+           into carbon-negative chemicals and fuel. Our scalable, 
+            modular technology solution has the power to turn our 
+            world's industries into sustainable ones.<br><br>
+    
+            The <span style="text-decoration: 2px underline;" onmouseenter="changeCursorColor()" onmouseleave="revertCursorColor()">AIRMADE™️ System</span> is ready, and it’s scaling every day. 
+            When we get every industry to use it, we’ll lower carbon 
+           emissions enough to stop the climate crisis from being a crisis.<br>
+        </p>
+    </div>
+    <div class="info-container" style="justify-content: right;margin-top:-540px;">
+        <img src="air-image1.jpeg" style="width:29vw;margin-right:110px;">
+    </div>
+    
+    <div style="justify-content: center;width:100vw;">
+       
+        <img src="co2-video-new.gif" style="width:100vw; margin-top:170px;">
+    
+    </div>
+    
+    
+    <div class="info-container" style="margin-top:190px;">
+        <img src="air-image-5.jpg" style="width:29vw; margin-left:120px;">
+    </div>
+    
+    <div class="info-container" style="margin-top:-522px;">
+        <p class="medium-text" style="margin-left:40.5vw;">
+            Every industry can 
+            <br>help fight climate change.</p>
+    </div>
+    
+    
+    
+    <div class="info-container" >
+        <p class="small-text" style="margin-top:-15px;margin-left:40.5vw;">
+            There’s no denying climate change is an extinction-level problem.<br>
+            And it requires radical action. Rapidly scaling and deploying CCUS 
+            <span style="letter-spacing:1.1px;">technologies like ours, will help aid in the transition to a </span>
+            <span style="letter-spacing:1px;">decarbonized economy, free of our reliance on fossil fuels.</span>
+    <br><br>
+    This necessary clean energy transition requires us to change how<br> 
+    <span style="letter-spacing:0.8px;">we look at the world’s largest industries, and it is widely accepted <br> </span>
+    that CCUS technologies are a key ingredient in this movement. With 
+    our <span style="text-decoration: 2px underline;" onmouseenter="changeCursorColor()" onmouseleave="revertCursorColor()">AIRMADE™️ chemicals and fuel</span>, <span style="letter-spacing:0.7px;">we are 
+    actively demonstrating the  </span>
+    <span style="letter-spacing:1px;">feasibility of our technology and its role in decarbonizing our </span>
+    economic systems.
+    <br><br>
+    <!-- We can preserve life on Earth, and the solution is here, ready to be used. -->
+    <br>
+        </p>
+    </div>
+    
+    
+    
+    
+    <div class="info-container" style="margin-top:70px;">
+        <p class="medium-text" style="margin-left:118px;">
+            Carbon utilization at scale.
+        </p>
+    </div>
+    <p class="small-text" style="margin-left:182px;margin-top:-15px;">
+        We’ve engineered a scalable, modular technology designed to create carbon solutions that function with industry and drive consumer demand. Powered by renewable energy, we convert CO2 into the highest quality and most sustainable chemicals and fuel on the planet. From spirits and beauty, to aviation and beyond, our technology is being applied to reshape businesses of all kinds.
+    
+    <br><br>
+    
+    By scaling our technology across all applicable verticals, our projected impact could avoid 10.8% of global CO2 emissions, the equivalent of more than 4.6 billion tons of CO2 annually.<br>
+    </p>
+    </div>
+    
+    <div class="info-container" style="justify-content: right;margin-top:-445px;">
+        <img src="air-image3.jpeg" style="width:29vw;margin-right:110px;">
+    </div>
+    <!-- <div class="info-container"> 
+        <p style="height:30vh;"></p>
+    </div> -->
+    <!-- <div class="info-container" style="justify-content: center;">
+       
+        <div class="title-container-middle " style="height:200px;">
+            <img src="air-logo-icon.jpg" style="height:27px;margin-top:180px;">    
+            </div>
+            
+    </div> -->
+    
+    <div class="info-container" style="justify-content: center;margin-top:190px;">
+        <img src="end-circle.gif" style="width:35vw;">
+    </div>
+    
+    <div class="info-container" style="justify-content: center;margin-top:-30px;">
+        <p class="medium-text">
+            Recycling CO2: ensure sustainability for all.
+            </p>
+    </div>
+    <div style="height:15px;">
+    
+    </div>
+
+<script>
+    var body = document.querySelector('body');
+    var cursor = document.querySelector('.cursor');
+
+    body.addEventListener('mousemove', function(event) {
+        cursor.style.top = event.clientY + 'px';
+        cursor.style.left = event.clientX + 'px';
+    })
+
+    function changeCursorColor() {
+        cursor.style.backgroundColor = "transparent";
+        cursor.style.opacity = "100%";
+        cursor.style.border = "2px solid rgb(85,96,96)";
+        cursor.style.width = "22px";
+        cursor.style.height = "22px";
+        cursor.style.transitionDuration = "0s";
+    }
+
+    function revertCursorColor() {
+        cursor.style.backgroundColor = "rgb(85,96,96)";
+        cursor.style.width = "20px";
+        cursor.style.height = "20px";
+        cursor.style.transitionDuration = "0s";
+    }
+
+    $(function() {
+        var stickyHeaderTop = $('#stickytypeheader').offset().top;
+
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > stickyHeaderTop) {
+                $('#stickytypeheader').css({ position: 'fixed', top: '30px' });
+                $('#sticky').css('display', 'block');
+            } else {
+                $('#stickytypeheader').css({ position: 'static', top: '0px' });
+                $('#sticky').css('display', 'none');
+            }
+
+            // Check if window.pageYOffset is greater than 5000 pixels
+            if (window.pageYOffset > 9270) {
+                $('#v0').css({ position: 'absolute', top: '9270px' });
+            } else {
+                $('#v0').css({ position: 'fixed', top: '120px' });
+            }
+        });
+    });
+
+    window.scrollTo(0, 0);
+
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+
+    var frameNumber = 0,
+        playbackConst = 970,
+        setHeight = document.getElementById("set-height"),
+        vid = document.getElementById('v0');
+
+    vid.addEventListener('loadedmetadata', function() {
+        setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
+    });
+
+    function scrollPlay() {
+        var frameNumber = window.pageYOffset / playbackConst;
+        var nextFrame = frameNumber + 1;
+        var frameFraction = frameNumber % 1;
+        var nextFrameFraction = nextFrame % 1;
+        var framesPerSecond = 800;
+        vid.currentTime = frameNumber;
+        window.requestAnimationFrame(scrollPlay);
+    }
+
+    window.requestAnimationFrame(scrollPlay);
+    document.addEventListener("scroll", (event) => {
+        var videoContainer = document.getElementById("video-container");
+    });
+</script>
+    
+</body>
